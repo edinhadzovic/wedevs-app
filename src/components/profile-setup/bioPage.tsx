@@ -1,0 +1,39 @@
+import { IUser } from "../../interface";
+
+interface IBioPageProps {
+    user: IUser;
+}
+
+
+export const BioPage: React.FC<IBioPageProps> = ({user}) => {
+
+    return (
+        <div className="w-1/2 mx-auto space-y-10">
+            <div className="space-y-6">
+                <div className="text-center">
+                    <img className="w-24 h-24 rounded-full inline-block" src={user.avatar} alt="user avatar" />
+                </div>
+                <div className="text-center mx-auto">
+                    <div>
+                        Hi, @<span className="font-bold">{user.username}</span>,
+                    </div>
+                    <div>
+                        thank you for joining, you are the #<span className=" font-bold">231</span> memeber that joined our network.
+                        Before we go, let us check your bio.
+                    </div>
+                </div>
+            </div>
+            <div className="space-y-4">
+                <div className="font-bold">
+                    <label htmlFor="">Bio</label>
+                </div>
+                <div>
+                    <textarea className="p-3 h-24 bg-cultured-dark w-full text-xs" placeholder="about you" value={user.bio} />
+                </div>
+            </div>
+            <div className="flex justify-end">
+                <button className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" >Next</button>
+            </div>
+        </div>
+    );
+}
