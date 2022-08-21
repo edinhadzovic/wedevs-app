@@ -32,11 +32,4 @@ export const Login = () => {
             </div>
         </div>
     )
-
-    return (
-        <div className="flex flex-col">
-            <button onClick={singin}>singin with github</button>
-            Login Page
-        </div>
-    );
 }
