@@ -1,12 +1,16 @@
+import { StoryCard } from "../components/cards";
 import { RequreAuthRoute } from "../routes";
 
 
 const Content = () => {
 
     return (
-        <div className="h-screen w-screen justify-center items-center">
-            <div>
-                The linkedin for developers. <span className="font-bold">Just better!</span>
+        <div>
+            <div className="w-3/4 mx-auto space-y-24">
+                <StoryCard />
+                <StoryCard />
+                <StoryCard />
+                <StoryCard />
             </div>
             <div></div>
         </div>
