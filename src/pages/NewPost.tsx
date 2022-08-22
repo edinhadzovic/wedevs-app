@@ -6,7 +6,10 @@ const Content = () => {
     return (
         <div>
             <div>
-                Discover people and projects.
+                <input type="text" placeholder="Title" className="p-2 text-3xl outline-none font-bold" />
+            </div>
+            <div>
+                <textarea placeholder="Content" className="p-2 text-xl outline-none w-full" />
             </div>
             <div></div>
         </div>

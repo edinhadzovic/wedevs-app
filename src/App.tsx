@@ -26,6 +26,7 @@ const LoadingIndicator = () => {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/new-post" element={<NewPost />} />
         <Route path="/users/:username" element={<UserProfile />} />
+        <Route path="/:username/posts/:slug" element={<UserProfile />} />
         <Route path="/welcome" element={<Welcome />} />
       </Route>
     </Routes>

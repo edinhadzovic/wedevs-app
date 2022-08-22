@@ -21,14 +21,17 @@ export const StoryCard: React.FC<IStoryCardProps> = () => {
                     <FontAwesomeIcon icon={faEllipsisVertical} size="lg"/>
                 </div>
             </div>
-            <div className="space-y-2 p-2 cursor-pointer hover:bg-gray-100 transition-colors">
-                <div>
-                    <h3 className="font-bold text-xl">How working for wrong companies can hurt your, more then you think !</h3>
+            <Link to={`/edinhadzovic/posts/how-working-for-wrong-companies-can-hurt-your-carrer-1mfsdo92`}>
+                <div className="space-y-2 p-4 cursor-pointer transition-all rounded">
+                    <div>
+                        <h3 className="font-bold text-xl">How working for wrong companies can hurt your, more then you think !</h3>
+                    </div>
+                    <div>
+                        As a software developer, sometimes, you pick a job or contract because you need to get paid, but after working in this field for couple of years, maybe, the solutions to just say no...
+                    </div>
                 </div>
-                <div>
-                    As a software developer, sometimes, you pick a job or contract because you need to get paid, but after working in this field for couple of years, maybe, the solutions to just say no...
-                </div>
-            </div>
+            </Link>
+            
             <div className=" justify-end flex">
                 <StoryAction />
             </div>

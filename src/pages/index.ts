@@ -5,3 +5,4 @@ export * from "./Discover";
 export * from "./Jobs";
 export * from "./NewPost";
 export * from "./UserProfile";
+export * from "./Post";

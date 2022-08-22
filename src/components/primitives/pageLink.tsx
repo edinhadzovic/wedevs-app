@@ -12,7 +12,7 @@ const getClassName = (active: boolean) => {
         return `${className} bg-sea-green font-bold`;
     }
 
-    return `${className} hover:bg-gray-200`;
+    return `${className} hover:bg-gray-50 hover:font-bold`;
 }
 
 export const PageLink: React.FC<IPageLinkProps> = (props) => {
