@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import { Provider, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+import { useUser } from './hooks';
 import { Discover, Home, Jobs, Login, NewPost, UserProfile, Welcome } from './pages';
 import { Layout } from './shared/Layout';
-import { fetchMe, selectMe } from './store/features';
+import { fetchMe } from './store/features';
 import store from './store/store';
 
 
 const LoadingIndicator = () => {
-  const {loading} = useSelector(selectMe);
+  const {loading} = useUser();
 
 
   if (loading) {

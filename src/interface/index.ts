@@ -7,4 +7,10 @@ export interface IUser {
     newUser: boolean;
     profileUrl: string;
     username: string;
+    interests: IInterest[];
+}
+
+export interface IInterest {
+    id: string;
+    name: string;
 }

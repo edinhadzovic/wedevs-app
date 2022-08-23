@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 import { BioPage, InterestsPage, FollowPage, FinishPage } from "../components/profile-setup";
-import { ProfileSetupStep, useProfileSetup } from "../hooks";
+import { ProfileSetupStep, useProfileSetup, useUser } from "../hooks";
 import { RequreAuthRoute } from "../routes";
-import { selectMe } from "../store/features";
+import { changeBio } from "../store/features";
 
 const pageClass = (active: boolean) => {
     const className = "p-1 rounded cursor-pointer";
@@ -18,7 +18,8 @@ const pageClass = (active: boolean) => {
 
 const Content = () => {
     const [page, changePage] = useProfileSetup();
-    const {user, loading} = useSelector(selectMe);
+    const {user, loading} = useUser();
+    const dispatch = useDispatch();
     const location = useLocation();
 
     if (!user.newUser) {
@@ -40,8 +41,8 @@ const Content = () => {
                 </nav>
             </aside>
             <div className="w-full max-w-[1000px] mx-8">
-                {page === ProfileSetupStep.Bio && <BioPage user={user} />}
-                {page === ProfileSetupStep.Interests && <InterestsPage />}
+                {page === ProfileSetupStep.Bio && <BioPage user={user} onBioChange={(e) => dispatch(changeBio(e.target.value))}/>}
+                {page === ProfileSetupStep.Interests && <InterestsPage user={user} />}
                 {page === ProfileSetupStep.Follow && <FollowPage />}
                 {page === ProfileSetupStep.Finish && <FinishPage />}
             </div>

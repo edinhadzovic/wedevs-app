@@ -1,18 +1,14 @@
 import { AxiosInstance } from "axios";
-import { IUser } from "../../interface";
 import { backendService } from "../core";
 
-export class UserService {
+export class InterestService {
     private http: AxiosInstance;
     constructor() {
         this.http = backendService.backendAxios;
     }
-    me() {
-        return this.http.get('user/me');
-    }
 
-    updateUser(user: IUser) {
-        return this.http.put('user/me', user);
+    search(search: string) {
+        return this.http.get('interests?search=' + search);
     }
     // register(email, password) {
     //     return this.http.post('/api/auth/register', { email, password });

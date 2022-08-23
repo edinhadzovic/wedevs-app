@@ -2,10 +2,11 @@ import { IUser } from "../../interface";
 
 interface IBioPageProps {
     user: IUser;
+    onBioChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 
-export const BioPage: React.FC<IBioPageProps> = ({user}) => {
+export const BioPage: React.FC<IBioPageProps> = ({user, onBioChange}) => {
 
     return (
         <div className="w-1/2 mx-auto space-y-10">
@@ -28,7 +29,7 @@ export const BioPage: React.FC<IBioPageProps> = ({user}) => {
                     <label htmlFor="">Bio</label>
                 </div>
                 <div>
-                    <textarea className="p-3 h-24 bg-cultured-dark w-full text-xs" placeholder="about you" value={user.bio} />
+                    <textarea onChange={onBioChange} className="p-3 h-24 bg-cultured-dark w-full text-xs" placeholder="about you" value={user.bio} />
                 </div>
             </div>
             <div className="flex justify-end">

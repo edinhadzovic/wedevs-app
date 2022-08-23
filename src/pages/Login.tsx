@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
+
 import { Navigate, useLocation } from "react-router-dom";
+import { useUser } from "../hooks";
 import { client } from "../services";
-import { selectMe } from "../store/features";
 
 
 export const Login = () => {
-    const {user, auth, loading} = useSelector(selectMe);
+    const {user, auth, loading} = useUser();
     const singin = () => client.auth.login();
     const location = useLocation();
 

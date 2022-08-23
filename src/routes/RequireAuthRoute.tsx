@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
+
 import { Navigate, useLocation } from "react-router-dom";
-import { selectMe } from "../store/features";
+import { useUser } from "../hooks";
 
 interface IRequireAuthRouteProps {
     children: JSX.Element
 }
 
 export const RequreAuthRoute: React.FC<IRequireAuthRouteProps> = ({ children }) => {
-    const {auth, loading} = useSelector(selectMe);
+    const {auth, loading} = useUser();
     const location = useLocation();
 
     if (loading) {

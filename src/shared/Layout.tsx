@@ -1,14 +1,13 @@
-import { useSelector } from "react-redux";
 import { Link, Outlet, useMatch } from "react-router-dom";
 import { Avatar, Button, PageLink } from "../components/primitives";
-import { selectMe } from "../store/features";
+import { useUser } from "../hooks";
 
 interface ILayoutProps {}
 
 export const Layout: React.FC<ILayoutProps> = (props) => {
     const isLogin = useMatch({path: "/", end: true});
     const isWelcome = useMatch({path: "/welcome", end: true});
-    const {user} = useSelector(selectMe);
+    const {user} = useUser();
 
 
     if (isLogin || isWelcome) {
