@@ -9,11 +9,15 @@ export class UserService {
     }
 
     me() {
-        return this.http.get('user/me');
+        return this.http.get('users/me');
     }
 
     updateUser(user: IUser) {
-        return this.http.patch('user/me', user);
+        return this.http.patch('users/me', user);
+    }
+
+    findUsersWithSameInterests() {
+        return this.http.get('users?suggest=true');
     }
     // register(email, password) {
     //     return this.http.post('/api/auth/register', { email, password });
