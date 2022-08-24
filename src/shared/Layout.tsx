@@ -19,7 +19,9 @@ export const Layout: React.FC<ILayoutProps> = (props) => {
             <div className="flex flex-row container mx-auto items-center px-2 py-4 mb-8">
                 <div className="basis-1/4 flex px-2 space-x-4 items-center">
                     <div>
-                        <Avatar source={user.avatar} size="small" />
+                        <Link to="/home">
+                            <Avatar source={user.avatar} size="small" />
+                        </Link>
                     </div>
                     <div className="hidden sm:flex">
                         <span className="font-bold">@{user.username}</span>
