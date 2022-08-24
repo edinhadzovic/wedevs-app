@@ -39,7 +39,7 @@ const reducer = (state: IInterestFieldReducerState, action: IInterestFieldReduce
             return {
                 ...state,
                 fetching: "idle",
-                input: action.payload.input!
+                input: action.payload.input!.trim()
             }
         }
         case InterestFieldAction.ERROR: {

@@ -7,12 +7,13 @@ export class UserService {
     constructor() {
         this.http = backendService.backendAxios;
     }
+
     me() {
         return this.http.get('user/me');
     }
 
     updateUser(user: IUser) {
-        return this.http.put('user/me', user);
+        return this.http.patch('user/me', user);
     }
     // register(email, password) {
     //     return this.http.post('/api/auth/register', { email, password });

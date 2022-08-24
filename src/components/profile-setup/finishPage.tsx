@@ -1,5 +1,9 @@
+import { useUser } from "../../hooks";
+import { updateMe } from "../../store/features";
+import store from "../../store/store";
 
 export const FinishPage: React.FC = () => {
+    const {user} = useUser();
 
     return (
         <div className="w-1/2 mx-auto space-y-6">
@@ -9,7 +13,7 @@ export const FinishPage: React.FC = () => {
                 </div>
             </div>
             <div className="flex justify-end">
-                <button className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" >done</button>
+                <button className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" onClick={() => store.dispatch(updateMe(user))} >done</button>
             </div>
         </div>
     );
