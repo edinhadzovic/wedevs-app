@@ -6,7 +6,7 @@ interface IPageLinkProps {
 }
 
 const getClassName = (active: boolean) => {
-    const className = "rounded transition-colors cursor-pointer px-2 py-1 w-3/4";
+    const className = "rounded transition-colors cursor-pointer px-2 py-1 w-full";
 
     if (active) {
         return `${className} bg-sea-green font-bold`;

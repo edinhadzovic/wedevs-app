@@ -2,11 +2,13 @@ import { useUser } from "../../hooks";
 import { updateMe } from "../../store/features";
 import store from "../../store/store";
 
-export const FinishPage: React.FC = () => {
+interface IFinishPageProps {}
+
+export const FinishPage: React.FC<IFinishPageProps> = () => {
     const {user} = useUser();
 
     return (
-        <div className="w-1/2 mx-auto space-y-6">
+        <div className="w-full sm:w-1/2 mx-auto space-y-6">
             <div className="space-y-6 text-center">
                 <div className="text-[24px] font-bold">
                     Thank you for joining, please read the rules and contribute standards. 

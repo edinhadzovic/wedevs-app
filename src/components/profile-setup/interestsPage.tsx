@@ -6,16 +6,17 @@ import { addNewInterest, removeInterest } from "../../store/features";
 import { InterestField } from "../fields";
 
 interface IInterestsPageProps {
-    user: IUser
+    user: IUser;
+    onNextClick: () => void;
 }
 
 export const InterestsPage: React.FC<IInterestsPageProps> = (props) => {
-    const { user } = props;
+    const { user, onNextClick } = props;
     // should be maybe a hook thats stores input value, fetch interests from api and dispatch action to user reducer.
     const dispatch = useDispatch();
 
     return (
-        <div className="w-1/2 mx-auto space-y-6">
+        <div className="w-full sm:w-1/2 mx-auto space-y-6">
             <div className="space-y-6 text-center">
                 <div className="text-[24px] font-bold">
                     Find your dev community
@@ -36,7 +37,7 @@ export const InterestsPage: React.FC<IInterestsPageProps> = (props) => {
                 </div>
             </div>
             <div className="flex justify-end">
-                <button className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" >Next</button>
+                <button onClick={onNextClick} className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" >Next</button>
             </div>
         </div>
     );

@@ -32,7 +32,7 @@ const Content = () => {
 
     return (
         <div className="flex container mx-auto mt-10">
-            <aside className=" w-1/6">
+            <aside className="w-1/6 hidden sm:flex">
                 <nav className="space-y-2">
                     <div className={pageClass(page === ProfileSetupStep.Bio)} onClick={() => changePage(ProfileSetupStep.Bio)}>bio</div>
                     <div className={pageClass(page === ProfileSetupStep.Interests)} onClick={() => changePage(ProfileSetupStep.Interests)}>interests</div>
@@ -41,9 +41,9 @@ const Content = () => {
                 </nav>
             </aside>
             <div className="w-full max-w-[1000px] mx-8">
-                {page === ProfileSetupStep.Bio && <BioPage user={user} onBioChange={(e) => dispatch(changeBio(e.target.value))}/>}
-                {page === ProfileSetupStep.Interests && <InterestsPage user={user} />}
-                {page === ProfileSetupStep.Follow && <FollowPage />}
+                {page === ProfileSetupStep.Bio && <BioPage user={user} onBioChange={(e) => dispatch(changeBio(e.target.value))} onNextClick={() => changePage(ProfileSetupStep.Interests)}/>}
+                {page === ProfileSetupStep.Interests && <InterestsPage user={user} onNextClick={() => changePage(ProfileSetupStep.Follow)}/>}
+                {page === ProfileSetupStep.Follow && <FollowPage onNextClick={() => changePage(ProfileSetupStep.Finish)}/>}
                 {page === ProfileSetupStep.Finish && <FinishPage />}
             </div>
         </div>
