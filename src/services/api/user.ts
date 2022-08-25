@@ -19,6 +19,14 @@ export class UserService {
     findUsersWithSameInterests() {
         return this.http.get('users?suggest=true');
     }
+
+    startFollowing(userId: string) {
+        return this.http.put(`users/${userId}/follow`);
+    }
+
+    unFollow(userId: string) {
+        return this.http.put(`users/${userId}/unfollow`);
+    }
     // register(email, password) {
     //     return this.http.post('/api/auth/register', { email, password });
     // }

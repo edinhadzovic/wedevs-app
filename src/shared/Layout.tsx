@@ -40,7 +40,7 @@ export const Layout: React.FC<ILayoutProps> = (props) => {
                     </div>
                 </div>
                 <div className="sm:basis-1/4 justify-end hidden sm:flex">
-                    <Button type="dark">Logout</Button>                
+                    <Button version="dark">Logout</Button>                
                 </div>
             </div>
             <div className="container mx-auto flex flex-row" >

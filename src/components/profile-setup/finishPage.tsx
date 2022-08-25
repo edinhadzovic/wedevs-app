@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import { useUser } from "../../hooks";
 import { updateMe } from "../../store/features";
 import store from "../../store/store";
@@ -6,6 +7,12 @@ interface IFinishPageProps {}
 
 export const FinishPage: React.FC<IFinishPageProps> = () => {
     const {user} = useUser();
+    const navigate = useNavigate();
+
+    const handleSubmit = async () => {
+        await store.dispatch(updateMe(user));
+        navigate("/home", {replace: true});
+    }
 
     return (
         <div className="w-full sm:w-1/2 mx-auto space-y-6">
@@ -15,7 +22,7 @@ export const FinishPage: React.FC<IFinishPageProps> = () => {
                 </div>
             </div>
             <div className="flex justify-end">
-                <button className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" onClick={() => store.dispatch(updateMe(user))} >done</button>
+                <button className="py-1 w-32 bg-sea-green hover:bg-sea-green-dark shadow-md" onClick={handleSubmit}>done</button>
             </div>
         </div>
     );

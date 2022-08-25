@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+import { PageLoader } from './components/indicator';
 import { useUser } from './hooks';
 import { Discover, Home, Jobs, Login, NewPost, UserProfile, Welcome } from './pages';
 import { Layout } from './shared/Layout';
@@ -14,7 +15,7 @@ const LoadingIndicator = () => {
 
   if (loading) {
     return (
-      <div>loading...</div>
+      <PageLoader />
     )
   }
 

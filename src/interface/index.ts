@@ -8,9 +8,18 @@ export interface IUser {
     profileUrl: string;
     username: string;
     interests: IInterest[];
+    follower?: IFollower[];
+    following?: IFollower[];
 }
 
 export interface IInterest {
     id: string;
     name: string;
+}
+
+export interface IFollower {
+    followerId?: string;
+    followingId?: string;
+    follower?: IUser;
+    following?: IUser;
 }

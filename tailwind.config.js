@@ -29,6 +29,32 @@ module.exports = {
       },
       fontFamily: {
         'poppins': ["Poppins", ...defaultTheme.fontFamily.sans]
+      },
+      keyframes: {
+        'translate-down': {
+          '0%': {
+            opacity: 0.05,
+            transform: 'translateY(-55px)'
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0px)'
+          }
+        },
+        'translate-up': {
+          '0%': {
+            opacity: 0.05,
+            transform: 'translateY(55px)'
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0px)'
+          }
+        }
+      },
+      animation: {
+        "translate-down": "translate-down 1.2s ease-in-out infinite",
+        "translate-up": "translate-up 1.2s ease-in-out infinite",
       }
     },
   },

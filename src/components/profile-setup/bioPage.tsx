@@ -30,7 +30,7 @@ export const BioPage: React.FC<IBioPageProps> = ({user, onBioChange, onNextClick
                     <label htmlFor="">Bio</label>
                 </div>
                 <div>
-                    <textarea onChange={onBioChange} className="p-3 h-24 bg-cultured-dark w-full text-xs" placeholder="about you" value={user.bio} />
+                    <textarea onChange={onBioChange} className="p-3 h-24 bg-cultured-dark w-full text-xs outline-none" placeholder="about you" value={user.bio} />
                 </div>
             </div>
             <div className="flex justify-end">

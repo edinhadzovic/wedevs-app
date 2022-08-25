@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
+import { PageLoader } from "../components/indicator";
 import { BioPage, InterestsPage, FollowPage, FinishPage } from "../components/profile-setup";
 import { ProfileSetupStep, useProfileSetup, useUser } from "../hooks";
 import { RequreAuthRoute } from "../routes";
@@ -27,13 +28,13 @@ const Content = () => {
     }
 
     if (loading) {
-        return <div></div>
+        return <PageLoader/>
     }
 
     return (
         <div className="flex container mx-auto mt-10">
             <aside className="w-1/6 hidden sm:flex">
-                <nav className="space-y-2">
+                <nav className="space-y-2 w-full">
                     <div className={pageClass(page === ProfileSetupStep.Bio)} onClick={() => changePage(ProfileSetupStep.Bio)}>bio</div>
                     <div className={pageClass(page === ProfileSetupStep.Interests)} onClick={() => changePage(ProfileSetupStep.Interests)}>interests</div>
                     <div className={pageClass(page === ProfileSetupStep.Follow)} onClick={() => changePage(ProfileSetupStep.Follow)}>follow</div>

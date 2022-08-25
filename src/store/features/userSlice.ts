@@ -20,7 +20,11 @@ export const fetchMe = createAsyncThunk('user/me', async () => {
 })
 
 export const updateMe = createAsyncThunk('user/updateMe', async (user: IUser) => {
-    const res = await client.user.updateUser(user);
+    const payload: IUser = {
+        ...user,
+        newUser: false
+    }
+    const res = await client.user.updateUser(payload);
     return res.data;
 })
 

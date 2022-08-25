@@ -1,4 +1,5 @@
 import { IUser } from "../../interface";
+import { FollowAction } from "../actions";
 import { Button, Avatar } from "../primitives"
 
 interface IFollowCard {
@@ -20,7 +21,7 @@ export const FollowCard: React.FC<IFollowCard> = ({user}) => {
                 </p>
             </div>
             <div className="flex justify-end">
-                <Button>follow</Button>
+                <FollowAction toFollow={user} />
             </div>
         </div>
     )
