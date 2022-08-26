@@ -11,6 +11,8 @@ const getClassName = (type: ButtonType) => {
     switch (type) {
         case 'dark':
             return `${className} bg-gray-800 text-white font-bold hover:bg-gray-700`;
+        case 'secondary':
+            return `${className} bg-sea-green text-white hover:bg-sea-green-dark font-bold`;
         case "warning":
             return `${className} border-[1px] border-gray-600 font-bold hover:bg-red-100 hover:border-red-200 hover:text-red-600`;
         default:

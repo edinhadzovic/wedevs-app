@@ -1,17 +1,33 @@
+
+import { useSelector } from "react-redux";
+import { EditContent, PreviewContent } from "../components/content";
+import { Button, Tab } from "../components/primitives";
+import { useStoryTabs } from "../hooks";
 import { RequreAuthRoute } from "../routes";
+import { RootState } from "../store/store";
 
 
 const Content = () => {
+    const {story} = useSelector((state: RootState) => state.story);
+    const {activeTab, handleTabChange} = useStoryTabs();
 
     return (
         <div>
-            <div>
-                <input type="text" placeholder="Title" className="p-2 text-3xl outline-none font-bold" />
+            <div className="flex mb-5 px-2 w-full">
+                <div className="space-x-4">
+                    <Tab active={activeTab === "edit"} onClick={() => handleTabChange("edit")} >Edit</Tab>
+                    <Tab active={activeTab === "preview"} onClick={() => handleTabChange("preview")} >Preview</Tab>
+                </div>
+                <div className="flex space-x-5 ml-auto">
+                    <Button version="secondary">Publish</Button>
+                    <Button>Save Draft</Button>
+                </div>
             </div>
-            <div>
-                <textarea placeholder="Content" className="p-2 text-xl outline-none w-full" />
+            <div className="">
+                {activeTab === "edit" && <EditContent story={story} />}
+                {activeTab === "preview" && <PreviewContent story={story} />}
             </div>
-            <div></div>
+            
         </div>
     );
 }

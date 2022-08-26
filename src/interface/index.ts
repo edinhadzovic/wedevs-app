@@ -1,3 +1,5 @@
+export type StoryState = "draft" | "published" | "archived";
+
 export interface IUser {
     avatar: string;
     bio: string | undefined;
@@ -22,4 +24,11 @@ export interface IFollower {
     followingId?: string;
     follower?: IUser;
     following?: IUser;
+}
+
+export interface IStory {
+    state: StoryState;
+    title: string;
+    contentRaw: string;
+    contentHtml: string;
 }

@@ -16,7 +16,7 @@ export const Layout: React.FC<ILayoutProps> = (props) => {
 
     return (
         <div>
-            <div className="flex flex-row container mx-auto items-center px-2 py-4 mb-8">
+            <div className="flex flex-row container mx-auto items-center px-2 py-4 mb-8 sm:border-b-[1px] sm:border-gray-200">
                 <div className="basis-1/4 flex px-2 space-x-4 items-center">
                     <div>
                         <Link to="/home">
@@ -53,11 +53,6 @@ export const Layout: React.FC<ILayoutProps> = (props) => {
                 </aside>
                 <div className="w-full mx-2 sm:basis-3/4">
                     <Outlet />
-                </div>
-                <div className="hidden sm:basis-1/4 sm:flex">
-                    {
-                        // should be offer user discover pages.
-                    }
                 </div>
             </div>
         </div>

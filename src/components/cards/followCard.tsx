@@ -1,6 +1,6 @@
 import { IUser } from "../../interface";
 import { FollowAction } from "../actions";
-import { Button, Avatar } from "../primitives"
+import { Avatar } from "../primitives"
 
 interface IFollowCard {
     user: IUser;

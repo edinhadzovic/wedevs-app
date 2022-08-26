@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IUser } from "../interface";
 import { client } from "../services";
 import { useUser } from "./useUser";

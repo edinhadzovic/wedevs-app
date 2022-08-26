@@ -1,4 +1,3 @@
-import { useUser } from "../../hooks";
 import { useIsFollower } from "../../hooks/useIsFollower";
 import { IUser } from "../../interface";
 import { Button } from "../primitives";
