@@ -18,7 +18,7 @@ const Content = () => {
                     <Tab active={activeTab === "edit"} onClick={() => handleTabChange("edit")} >Edit</Tab>
                     <Tab active={activeTab === "preview"} onClick={() => handleTabChange("preview")} >Preview</Tab>
                 </div>
-                <div className="flex space-x-5 ml-auto">
+                <div className="flex space-x-5 sm:ml-auto text-center fixed sm:relative bottom-5 sm:bottom-0 justify-center w-[90%] sm:w-auto">
                     <Button version="secondary">Publish</Button>
                     <Button>Save Draft</Button>
                 </div>

@@ -6,7 +6,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const getClassName = (type: ButtonType) => {
-    const className = "rounded shadow-md px-8 py-1 transition-colors";
+    const className = "rounded shadow-md px-8 py-1 transition-colors text-xs sm:text-sm";
 
     switch (type) {
         case 'dark':
