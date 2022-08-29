@@ -1,9 +1,9 @@
-import { IStory } from "../../interface";
+import { ICreateStory } from "../../interface";
 import { changeTitle, changeContentRaw } from "../../store/features";
 import store from "../../store/store";
 
 interface IEditContentProps {
-    story: IStory;
+    story: ICreateStory;
 }
 
 export const EditContent: React.FC<IEditContentProps> = ({story}) => {

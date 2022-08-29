@@ -20,7 +20,7 @@ marked.use({
                 return `<pre class="language-${lang} m-0 p-0"><code class="language-${lang}">${code}</code></pre>`;
             }
             return `<pre class="m-0 p-0 bg-gray-100 px-2 py-3"><code>${code}</code></pre>`;
-        }
+        },
     }
 })
 

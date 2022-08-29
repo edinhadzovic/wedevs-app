@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { Avatar } from "../primitives";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { StoryAction } from "../actions";
+import { IStory } from "../../interface";
+import { createSlugFromTitle } from "../../utils/indes";
 
-interface IStoryCardProps {}
+interface ICreateStoryCardProps {
+    story: IStory
+}
 
-export const StoryCard: React.FC<IStoryCardProps> = () => {
+export const StoryCard: React.FC<ICreateStoryCardProps> = (props) => {
+    const {story} = props;
 
     return (
         <div className="space-y-5">
@@ -21,19 +26,19 @@ export const StoryCard: React.FC<IStoryCardProps> = () => {
                     <FontAwesomeIcon icon={faEllipsisVertical} size="lg"/>
                 </div>
             </div>
-            <Link to={`/edinhadzovic/posts/how-working-for-wrong-companies-can-hurt-your-carrer-1mfsdo92`}>
-                <div className="space-y-2 p-4 cursor-pointer transition-all rounded">
+            <Link to={`/edinhadzovic/posts/${createSlugFromTitle(story.title, story.slug)}`}>
+                <div className="space-y-4 p-4 cursor-pointer transition-all rounded">
                     <div>
-                        <h3 className="font-bold text-xl">How working for wrong companies can hurt your, more then you think !</h3>
+                        <h3 className="font-bold text-4xl">
+                            {story.title}
+                        </h3>
                     </div>
-                    <div>
-                        As a software developer, sometimes, you pick a job or contract because you need to get paid, but after working in this field for couple of years, maybe, the solutions to just say no...
-                    </div>
+                    <div className=" overflow-hidden max-h-28" dangerouslySetInnerHTML={{__html: story.contentHTML}}></div>
                 </div>
             </Link>
             
             <div className=" justify-end flex">
-                <StoryAction />
+                <StoryAction story={story} />
             </div>
         </div>
     );

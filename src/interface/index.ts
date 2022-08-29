@@ -1,4 +1,8 @@
-export type StoryState = "draft" | "published" | "archived";
+export enum StoryState {
+    DRAFT = "DRAFT",
+    PUBLISHED = "PUBLISHED",
+    ARCHIVED = "ARCHIVED"
+}
 
 export interface IUser {
     avatar: string;
@@ -26,9 +30,21 @@ export interface IFollower {
     following?: IUser;
 }
 
-export interface IStory {
+export interface ICreateStory {
     state: StoryState;
     title: string;
     contentRaw: string;
-    contentHtml: string;
+    contentHTML: string;
+    published: boolean;
+}
+
+export interface IStory extends ICreateStory {
+    id: string;
+    author: IUser;
+    createdAt: string;
+    slug: string;
+    _count: {
+        comments: number;
+        likes: number;
+    }
 }
