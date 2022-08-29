@@ -1,3 +1,3 @@
 export const config = {
-    BACKEND_SERVICE_URL: process.env.REACT_APP_BACKEND_URL,
+    BACKEND_SERVICE_URL: import.meta.env.VITE_BACKEND_URL,
 }

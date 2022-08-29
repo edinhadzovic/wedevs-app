@@ -5,6 +5,7 @@ export class BackendService {
     public backendAxios: AxiosInstance;
     
     constructor() {
+        console.log(config.BACKEND_SERVICE_URL);
         this.backendAxios = axios.create({baseURL: config.BACKEND_SERVICE_URL, withCredentials: true});
     }
 }
