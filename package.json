@@ -30,8 +30,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start:dev": "PORT=3001 react-scripts start",
-    "start": "vite --port $PORT",
+    "start:dev": "vite --port 3000",
+    "start:pro": "vite --port $PORT --host",
     "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
