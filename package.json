@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start:dev": "PORT=3001 react-scripts start",
-    "start": "vite",
+    "start": "vite --port $PORT",
     "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
